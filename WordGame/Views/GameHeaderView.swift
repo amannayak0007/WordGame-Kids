@@ -13,25 +13,6 @@ struct GameHeaderView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Status bar simulation
-            HStack {
-                Text(timeString)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "wifi")
-                        .font(.caption)
-                    Image(systemName: "battery.100")
-                        .font(.caption)
-                }
-                .foregroundColor(.secondary)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
-            
             // Game header
             HStack(spacing: 16) {
                 // Settings button
@@ -74,13 +55,6 @@ struct GameHeaderView: View {
             .background(Color.white)
             .shadow(color: .black.opacity(0.05), radius: 2, x: 0, y: 1)
         }
-    }
-    
-    private var timeString: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .short
-        return formatter.string(from: Date())
     }
 }
 
